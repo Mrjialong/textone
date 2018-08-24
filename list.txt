@@ -1,0 +1,42 @@
+<script language = "javascript">
+   function submitForm(act){
+      if(act=="delete"){
+         var delrow = document.getElementsByName("deleteRow");
+         var len = delrow.length;
+         var  selectNum = 0;
+         for(i =0;i<len;i++){
+            var row = delrow[i];
+            if(row.checked){
+               selectNum++;
+               break;
+            }
+         }
+         if(selectNum == 0){
+            alert("请至少选着一条要删除的记录");
+            return;
+         }
+         if(!confirm("是否要删除？")){
+            return;
+         }
+         }
+         document.UserListForm.actionType.value = act;
+         document.UserListForm.submit();
+      }
+      //全选操作
+      function chkAllChanged(obj){
+         var delrow = document.getElementsByName("deleteRow");
+         var Int = delrow.length;
+         if(obj.checked){
+            for(i = 0;i<lnt;i++){
+               var row = delrow[i];
+               row.checked = true;
+            }
+         }
+         else{
+            for(i = 0;i<lnt;i++){
+               var row = delrow[i];
+               row.checked = false;
+            }
+         }
+      }
+</script>
